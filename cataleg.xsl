@@ -22,18 +22,22 @@
               <td><xsl:value-of select="country"/></td>
               <td><xsl:value-of select="price"/></td>
               <td style="text-align:left">
-                <xsl:if test="price &lt; 10">
-                  &#128994;
-                </xsl:if>
-                <xsl:if test="price &gt;= 10">
-                  &#128308;
-                </xsl:if>
+                <xsl:choose>
+                  <xsl:when test="price &lt; 10">
+                    &#128994;
+                  </xsl:when>
+                  <xsl:otherwise>
+                    &#128308;
+                  </xsl:otherwise>
+                </xsl:choose>
               </td>
             </tr>
+            <!-- </xsl:for-each> -->
           </xsl:for-each>
         </table>
       </body>
     </html>
   </xsl:template>
 </xsl:stylesheet>
+
 
